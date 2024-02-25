@@ -16,9 +16,9 @@ try {
     });
 
     const Instance = new TodoModel();
-    Instance.author = 'AAKASH';
-    Instance.title = 'A';
-    Instance.body = 'asa';
+    Instance.author = 'new';
+    Instance.title = 'beginnings';
+    Instance.body = 'MONGODB';
 
     await Instance.save();
 
@@ -32,8 +32,7 @@ try {
 
 } finally {
 
-    await mongoose.connection.close( ()=> {
-        console.log('MongoDB Connection Closed');
-    })
+    await mongoose.connection.close(); //From th enew version onwards can't write something insider brackets (callback not supported)
+    console.log("Mongoose Connection Closed");
 
 };
